@@ -16,7 +16,7 @@ import tensorflow as tf
 import os
 
 EPOCHS = 5
-BATCH_SIZE = 64
+BATCH_SIZE = 50
 LR = 0.001
 model_save_dir = "modelfiles/"
 if not os.path.exists(model_save_dir):
@@ -24,8 +24,8 @@ if not os.path.exists(model_save_dir):
 
 data_loader = MNISTLoader()
 model = LeNet()
-model.build_graph(input_shape=(None, 32, 32, 1))
-model.summary()
+# model.build_graph(input_shape=(None, 32, 32, 1))
+# model.summary()
 optimizer = tf.keras.optimizers.Adam(learning_rate=LR)
 
 num_train_batches = int(data_loader.train_num // BATCH_SIZE)
