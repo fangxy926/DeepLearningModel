@@ -24,7 +24,7 @@ class LeNet(tf.keras.Model):
             padding="valid",  # no padding
             activation=tf.nn.relu
         )
-        self.pool1 = tf.keras.layers.MaxPool2D(
+        self.pool1 = tf.keras.layers.AveragePooling2D(
             pool_size=(2, 2),
             strides=2
         )
@@ -36,7 +36,7 @@ class LeNet(tf.keras.Model):
             strides=(1, 1),
             activation=tf.nn.relu
         )
-        self.pool2 = tf.keras.layers.MaxPool2D(
+        self.pool2 = tf.keras.layers.AveragePooling2D(
             pool_size=(2, 2),
             strides=2
         )
